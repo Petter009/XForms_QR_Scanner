@@ -1,11 +1,11 @@
 ﻿using System;
-
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using ZXing.Mobile;
 
 namespace XFormsPelter.Droid
 {
@@ -20,8 +20,11 @@ namespace XFormsPelter.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+
+            MobileBarcodeScanner.Initialize(this.Application);
             LoadApplication(new App());
         }
+
     }
 }
 

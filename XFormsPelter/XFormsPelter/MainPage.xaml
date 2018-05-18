@@ -3,12 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:XFormsPelter"
              x:Class="XFormsPelter.MainPage">
+    <Grid BackgroundColor="FloralWhite" Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Image Source="patrilogoend" BackgroundColor="FloralWhite" Grid.Row="0"/>
 
-    <StackLayout>
-        <!-- Place new controls here -->
-    	<Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+        <Grid Grid.Row="1" Padding="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Margin="0,45,0,0" Grid.Row="0" HorizontalTextAlignment="Center" Text="QR-KODE SCANNER" TextColor="Black" FontSize="30" Opacity="0.6" />
+            <Button Scale="0.75" BorderRadius="20" BorderWidth="2" BorderColor="DarkGreen" x:Name="scanBtn" Clicked="scanBtn_Clicked" Grid.Column="0" FontSize="25" Grid.Row="1" Text="SCAN" Opacity="0.75" BackgroundColor="DarkGray" />
+            <Image Source="QRcode" Grid.Column="1" Grid.RowSpan="2" />
+        </Grid>
+        
+        <Image Source="divider" Grid.Row="2"/>
+        
+        <BoxView BackgroundColor="Fuchsia" Grid.Row="3"/>
+        
+        <BoxView BackgroundColor="Orange" Grid.Row="4"/>
+ 
+    </Grid>
 
 </ContentPage>
